@@ -16,11 +16,16 @@ app.controller("PlayerController", function($scope, $http) {
 	$scope.audio = document.createElement("audio");
 
   $scope.play = function(program) {
-	  if ($scope.playing) $scope.audio.pause();
-	  var url = program.audio[0].format.mp4.$text;
-	  $scope.audio.src = url;
-	  $scope.audio.play();
-	  $scope.playing = true;
+	  if ($scope.playing) {
+	  	$scope.audio.pause();
+	  	$scope.playing = false;
+	  }
+	  else {
+		  var url = program.audio[0].format.mp4.$text;
+		  $scope.audio.src = url;
+		  $scope.audio.play();
+		  $scope.playing = true;
+		}
 	}
 
 });
