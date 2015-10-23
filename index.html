@@ -6,7 +6,11 @@
 </head>
 <body ng-app="myApp">
 	<div ng-controller="PlayerController">
-	  {{programs}}
+		<ul>
+  		<li ng-repeat="program in programs" ng-click="play(program)">
+    		{{ program.title.$text }}
+    	</li>
+		</ul>
 	</div>
 </body>
 </html>
